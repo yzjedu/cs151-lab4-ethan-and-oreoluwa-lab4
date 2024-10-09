@@ -2,15 +2,19 @@
 # Course:  CS151, Dr. Zelalem Jembre Yalew
 # Due Date: 10/09/2024
 # Lab Assignment: 04
-# Problem Statement:
 # Problem Statement: Calculate the monthly bill for a mobile subscription based on user input.
 # Purpose: To determine how much a customer owes based on their chosen package and data usage.
 # Data In: Subscription package type, amount of data used, and coupon availability.
 # Data Out: Total monthly bill for the selected package.
-# Credits:
+# Credits: Textbook and Professor
 
 # Prompt for package name
 package = input("Enter your subscription package (Green, Blue, Purple): ").lower().strip()
+
+# Initialize variables for billing
+base_cost = 0
+included_data = 0
+additional_data_cost = 0
 
 # Check for valid package
 while package != "green" and package != "blue" and package != "purple":
@@ -35,7 +39,7 @@ elif package == "blue":
     additional_data_cost = 10
 elif package == "purple":
     base_cost = 99.95
-    included_data = 100000000000000  # Unlimited data
+    included_data = float('inf')  # Unlimited data
     additional_data_cost = 0
 
 # Calculate additional data charges
